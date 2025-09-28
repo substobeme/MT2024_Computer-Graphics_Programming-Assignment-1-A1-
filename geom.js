@@ -31,6 +31,22 @@ export function updGeom(st, cfg){
   for(let i=0;i<4;i++){
     st.bPts[cfg.rndN + i] = oc[i];
   }
+
+  // Prevent points from being inside the obstacle
+  st.pPts = st.pPts.map(p => {
+    if(inPoly(p, oc)){
+      // push point outside obstacle along y-axis or x-axis (simple fix)
+      let [px, py] = p;
+      const center = [cfg.obs.x + cfg.obs.w/2, cfg.obs.y + cfg.obs.h/2];
+      if(px < center[0]) px = cfg.obs.x - 1;
+      else px = cfg.obs.x + cfg.obs.w + 1;
+      if(py < center[1]) py = cfg.obs.y - 1;
+      else py = cfg.obs.y + cfg.obs.h + 1;
+      return [px, py];
+    }
+    return p;
+  });
+
   const bV = st.bPts.flat();
   const lV = [];
   st.edges.forEach(([i,j])=>{
@@ -48,6 +64,7 @@ export function updGeom(st, cfg){
   gl.bindBuffer(gl.ARRAY_BUFFER, st.buf.line);
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(lV), gl.DYNAMIC_DRAW);
 }
+
 
 export function rebuild(st, cfg){
   st.tris   = findTris(st.bPts, st.edges);
