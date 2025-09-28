@@ -31,11 +31,8 @@ export function updGeom(st, cfg){
   for(let i=0;i<4;i++){
     st.bPts[cfg.rndN + i] = oc[i];
   }
-
-  // Prevent points from being inside the obstacle
   st.pPts = st.pPts.map(p => {
     if(inPoly(p, oc)){
-      // push point outside obstacle along y-axis or x-axis (simple fix)
       let [px, py] = p;
       const center = [cfg.obs.x + cfg.obs.w/2, cfg.obs.y + cfg.obs.h/2];
       if(px < center[0]) px = cfg.obs.x - 1;
