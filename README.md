@@ -1,4 +1,4 @@
-# MT2024_Computer-Graphics_Programming-Assignment-1-A1-
+# MT2024_Computer-Graphics_Programming-Assignment-1-A1
 
 ## Overview
 This project is a WebGL-based interactive visualization of a 2-D crowd renderer simulation with with 2D translation, rotation, scaling/zooming.
@@ -21,7 +21,7 @@ This project is a WebGL-based interactive visualization of a 2-D crowd renderer 
 - **Scale:** `T` (smaller), `B` (bigger)
 
 ### Points & Edges
-- **Add Edge:** Click on first point, then second point
+- **Add Edge:** Click on first point, then second point(to deselect do right click)
 - **Remove Edge:** Click near an edge
 - **Drag People Points:** Click and drag points
 
