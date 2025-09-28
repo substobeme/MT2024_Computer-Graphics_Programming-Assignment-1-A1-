@@ -16,7 +16,7 @@ This project is a WebGL-based interactive visualization of a 2-D crowd renderer 
 ## Controls
 
 ### Obstacle
-- **Move:** `W` (up), `A` (left), `S` (down), `D` (right)
+- **Move:** `w` (up), `a` (left), `s` (down), `d` (right)
 - **Rotate:** `L` (left), `R` (right)
 - **Scale:** `T` (smaller), `B` (bigger)
 
