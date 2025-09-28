@@ -1,1 +1,1 @@
-# MT2024_Computer-Graphics-_-Programming-Assignment-1-A1-
+# MT2024_Computer-Graphics_Programming-Assignment-1-A1-
